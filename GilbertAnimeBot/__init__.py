@@ -11,6 +11,7 @@ from telethon import TelegramClient
 
 StartTime = time.time()
 
+LOGGER = logging.getLogger(__name__)
 # enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
