@@ -18,12 +18,6 @@ logging.basicConfig(
               logging.StreamHandler()],
     level=logging.INFO)
 
-log = logging.getLogger('[GILBERT]')
-logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
-log.info("[GILBERT] Gilbert is starting. | An Pigasus Team Project. | Licensed under GPLv3.")
-log.info("[GILBERT] Not affiliated to Pandora Hearts or Pandora Hearts: Official Artbook Jun Mochizuki in any way whatsoever.")
-log.info("[GILBERT] Project maintained by: github.com/AASFCYBERKING (t.me/AASFCYBERKING)")
-
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error(
@@ -193,6 +187,7 @@ else:
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("GilbertAnimeBot", API_ID, API_HASH)
 pbot = Client("Gilbertanimebot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+log = logging.getLogger('[GILBERT]')
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
