@@ -16,7 +16,7 @@ from telegram.utils.helpers import mention_html
 import GilbertAnimeBot.modules.sql.users_sql as sql
 from GilbertAnimeBot import (
     OWNER_ID,
-    SUDO_USERS,
+    WOLVES,
     SUPPORT_USERS,
     DEV_USERS,
     DEMONS,
@@ -150,9 +150,6 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     elif user.id in DEV_USERS:
         text += f"\n\nThis Person is a part of Pigasus Team"
         nation_level_present = True
-    elif user.id in SUDO_USERS:
-        text += f"\n\nThe Nation level of this person is Royal"
-        nation_level_present = True
     elif user.id in SUPPORT_USERS:
         text += f"\n\nThe Nation level of this person is Sakura"
         nation_level_present = True
@@ -162,6 +159,10 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     elif user.id in DRAGONS:
         text += f"\n\nThe Nation level of this person is Dragon"
         nation_level_present = True
+    elif user.id in WOLVES:
+        text += f"\n\nThe Nation level of this person is Wolf"
+        nation_level_present = True
+
 
     if nation_level_present:
         text += ' [<a href="https://t.me/{}?start=nations">?</a>]'.format(bot.username)
