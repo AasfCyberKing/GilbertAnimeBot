@@ -186,8 +186,10 @@ anything.
 - [kurumi](https://github.com/Hirojazz/kurumi) For Some Modules 
 - [Dank-del](https://github.com/Dank-del/Chizuru/) for some modules.
 - [EverythingSuckz](https://t.me/EverythingSuckz) for NSFW filter and some other modules.
-- [Hirojazz](https://github.com/Hirojazz) for reverse search modules.
+- [Hirojazz](https://github.com/Hirojazz) for Some modules.
 - [Paul Larsen](https://github.com/PaulSonOfLars) Real Work.
+- [Image-Editor](https://github.com/TroJanzHEX/Image-Editor) For ImageEditor Module
+- [TroJanzHEX](https://github.com/TroJanzHEX) For ImageEditor Module
 
 ## Warning⚠️
 
