@@ -1,6 +1,6 @@
 from typing import Dict, List
 from uuid import uuid4
-from Gilbertanimebot import NO_LOAD
+from GilbertAnimeBot import NO_LOAD
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, InlineQueryResultArticle, InputTextMessageContent
 from telegram.error import TelegramError
 
