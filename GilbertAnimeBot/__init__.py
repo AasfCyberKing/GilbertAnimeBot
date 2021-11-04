@@ -18,7 +18,11 @@ logging.basicConfig(
               logging.StreamHandler()],
     level=logging.INFO)
 
-LOGGER = logging.getLogger(__name__)
+log = logging.getLogger('[GILBERT]')
+logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
+log.info("[GILBERT] Gilbert is starting. | An Pigasus Team Project. | Licensed under GPLv3.")
+log.info("[GILBERT] Not affiliated to Pandora Hearts or Pandora Hearts: Official Artbook Jun Mochizuki in any way whatsoever.")
+log.info("[GILBERT] Project maintained by: github.com/AASFCYBERKING (t.me/AASFCYBERKING)")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
