@@ -8,7 +8,7 @@ import GilbertAnimeBot.modules.sql.users_sql as sql
 
 from GilbertAnimeBot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
                           OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
-                          SUPPORT_CHAT, dispatcher, StartTime, telethn, updater, pbot)
+                          SUPPORT_CHAT, HELP_IMG, GILBERT_PHOTO, dispatcher, StartTime, telethn, updater, pbot)
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from GilbertAnimeBot.modules import ALL_MODULES
@@ -98,8 +98,7 @@ For all command use / [or](https://telegra.ph/file/4942b6e8b63cb630d047b.jpg) !
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
 
-GILBERT_IMG = "https://telegra.ph/file/fcc9d75baf8b940963a79.jpg"
-
+HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """𖤐𖤐 Protecting The Master... Is Supposed To Be My Job! I No Need Donation For It 𖤐𖤐"""
 
 IMPORTED = {}
@@ -324,31 +323,27 @@ def help_button(update, context):
         pass
 
 
-@run_async
-def get_help(update: Update, context: CallbackContext):
+@typing_action
+def get_help(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
 
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
-        if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
-            module = args[1].lower()
-            update.effective_message.reply_text(
-                f"Contact me in PM to get help of {module.capitalize()}",
-                reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton(
-                        text="Help",
-                        url="t.me/{}?start=ghelp_{}".format(
-                            context.bot.username, module))
-                ]]))
-            return
-        update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton(
-                    text="Help",
-                    url="t.me/{}?start=help".format(context.bot.username))
-            ]]))
+
+        update.effective_message.reply_photo(
+            HELP_IMG, HELP_MSG,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="Open In Private Chat",
+                            url="t.me/{}?start=help".format(context.bot.username),
+                        )
+                    ]
+                ]
+            ),
+        )
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
