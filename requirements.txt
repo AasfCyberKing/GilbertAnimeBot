@@ -1,4 +1,5 @@
 future
+faker
 emoji
 lxml
 beautifulsoup4
