@@ -306,7 +306,6 @@ __help__ = """
 
 
 
-LOVE_HANDLER = DisableAbleCommandHandler("love", love)
 HACK_HANDLER = DisableAbleCommandHandler("hack", hack)
 BOMBS_HANDLER = DisableAbleCommandHandler("bombs",bombs)
 MOONANIMATION_HANDLER =DisableAbleCommandHandler("moon",moonanimation)
@@ -314,7 +313,6 @@ EMOJI_HANDLER =DisableAbleCommandHandler("emoji",emoji)
 BRAINANIMATION_HANDLER =DisableAbleCommandHandler("brain",brainanimation)
 POLICEANIMATION_HANDLER =DisableAbleCommandHandler("police",policeanimation)
 
-dispatcher.add_handler(LOVE_HANDLER)
 dispatcher.add_handler(HACK_HANDLER)
 dispatcher.add_handler(BOMBS_HANDLER)
 dispatcher.add_handler(POLICEANIMATION_HANDLER)
