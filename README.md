@@ -190,7 +190,7 @@ anything.
 - [Paul Larsen](https://github.com/PaulSonOfLars) Real Work.
 - [Image-Editor](https://github.com/TroJanzHEX/Image-Editor) For ImageEditor Module
 - [TroJanzHEX](https://github.com/TroJanzHEX) For ImageEditor Module
-
+- [TheHamkerCat](https://t.me/TheHamkerCat) For Inline Features
 ## Warning⚠️
 
 ```
