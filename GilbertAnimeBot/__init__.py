@@ -6,7 +6,9 @@ import spamwatch
 import telegram.ext as tg
 from redis import StrictRedis
 from pyrogram import Client, errors
+from Python_ARQ import ARQ
 
+from aiohttp import ClientSession
 from telethon import TelegramClient
 
 StartTime = time.time()
@@ -191,6 +193,8 @@ else:
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("GilbertAnimeBot", API_ID, API_HASH)
 pbot = Client("Gilbertpyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+aiohttpsession = ClientSession()
+arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
