@@ -103,6 +103,9 @@ if ENV:
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "lightYagami")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    HELP_IMG = os.environ.get("HELP_IMG", True)
+    GROUP_START_IMG = os.environ.get("GROUP_START_IMG", True)
+    GILBERT_PHOTO = os.environ.get("GILBERT_PHOTO", True)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
@@ -174,6 +177,10 @@ else:
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
+    HELP_IMG = Config.HELP_IMG
+    START_IMG = Config.START_IMG
+    GILBERT_PHOTO = Config.GILBERT_PHOTO
+
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
