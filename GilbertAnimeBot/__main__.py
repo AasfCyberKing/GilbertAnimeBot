@@ -220,7 +220,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            GILBERT_IMG, caption= "<code>Gilbert is Here For You🖤\nI am Awake Since</code>: <code>{}</code>".format(
+            GILBERT_PHOTO, caption= "<code>Gilbert is Here For You🖤\nI am Awake Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
