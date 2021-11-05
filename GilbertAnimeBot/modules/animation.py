@@ -9,15 +9,6 @@ from GilbertAnimeBot.modules.disable import DisableAbleCommandHandler
 
 
 
-#sleep how many times after each edit in 'love' 
-EDIT_SLEEP = 1
-#edit how many times in 'love' 
-EDIT_TIMES = 14
-
-
-
-
-
 #sleep how many times after each edit in 'bombs' 
 EDIT_SLEEP = 1
 #edit how many times in 'bombs' 
@@ -96,22 +87,7 @@ brain_chain = [
 
 ]
 
-love_siren = [
-             "1 ❤️ love story",
-        "  😐             😕 \n/👕\         <👗\ \n 👖               /|",
-        "  😉          😳 \n/👕\       /👗\ \n  👖            /|",
-        "  😚            😒 \n/👕\         <👗> \n  👖             /|",
-        "  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
-        "  😍          😍 \n/👕\       /👗\ \n  👖           /|",
-        "  😘   😊 \n /👕\/👗\ \n   👖   /|",
-        " 😳  😁 \n /|\ /👙\ \n /     / |",
-        "😈    /😰\ \n<|\      👙 \n /🍆    / |",
-        "😅 \n/(),✊😮 \n /\         _/\\/|",
-        "😎 \n/\\_,__😫 \n  //    //       \\",
-        "😖 \n/\\_,💦_😋  \n  //         //        \\",
-        "  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
-        "Abee aur kitna dekhoge be besharmi ki bhi hadd hoti hai..,The End 😂...",
-]
+
 
 
 hack_you = [
@@ -319,19 +295,7 @@ def hack(update: Update, context: CallbackContext):
 
 
 
-@run_async
-def love(update: Update, context: CallbackContext):
-    bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text('❣️') 
-    for x in range(EDIT_TIMES):
-        msg.edit_text(love_siren[x%14])
-        time.sleep(EDIT_SLEEP)
-    msg.edit_text('O MAA GO TURU LOB')
-
-
-
 __help__ = """
-- /love
 - /hack
 - /bombs
 - /moon
