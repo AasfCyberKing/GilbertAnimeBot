@@ -11,13 +11,14 @@ from telethon import TelegramClient
 
 StartTime = time.time()
 
-LOGGER = logging.getLogger(__name__)
 # enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[logging.FileHandler('log.txt'),
               logging.StreamHandler()],
     level=logging.INFO)
+
+LOGGER = logging.getLogger(__name__)
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
@@ -84,8 +85,8 @@ if ENV:
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
     CASH_API_KEY = os.environ.get('CASH_API_KEY', None)
     TIME_API_KEY = os.environ.get('TIME_API_KEY', None)
-    OPENWEATHERMAP_ID = os.environ.get('OPENWEATHERMAP_ID', None)
     AI_API_KEY = os.environ.get('AI_API_KEY', None)
+    OPENWEATHERMAP_ID = os.environ.get('OPENWEATHERMAP_ID', None)
     WALL_API = os.environ.get('WALL_API', None)
     REM_BG_API_KEY = os.environ.get('REM_BG_API_KEY', None)
     SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
@@ -189,8 +190,7 @@ else:
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("GilbertAnimeBot", API_ID, API_HASH)
-pbot = Client("Gilbertanimebot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-log = logging.getLogger('[GILBERT]')
+pbot = Client("Gilbertpyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
