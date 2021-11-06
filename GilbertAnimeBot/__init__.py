@@ -197,6 +197,12 @@ if not SPAMWATCH_API:
 else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
+# Credits Logger
+print("[GILBERT] GILBERT Is Starting. | Pigasus X Team Project | Licensed Under GPLv3.")
+print("[GILBERT] GILBERT NIGHTRAY! Successfully Connected Pigasus X Team • Tamil Nadu")
+print("[GILBERT] Project Maintained By: github.com/AASFCYBERKING (t.me/AASFCYBERKING)")
+
+
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("GilbertAnimeBot", API_ID, API_HASH)
 pbot = Client("Gilbertpyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
