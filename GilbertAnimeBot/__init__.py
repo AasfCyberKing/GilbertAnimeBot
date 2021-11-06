@@ -193,9 +193,13 @@ DEV_USERS.add(OWNER_ID)
 
 if not SPAMWATCH_API:
     sw = None
-    LOGGER.warning("SpamWatch API key missing! recheck your config.")
+    LOGGER.warning("[GILBERT ERROR]: SpamWatch API key Is Missing! Recheck Your Config.")
 else:
-    sw = spamwatch.Client(SPAMWATCH_API)
+    try:
+        sw = spamwatch.Client(SPAMWATCH_API)
+    except:
+        sw = None
+        LOGGER.warning("[GILBERT ERROR]: Can't connect to SpamWatch!")
 
 # Credits Logger
 print("[GILBERT] GILBERT Is Starting. | Pigasus X Team Project | Licensed Under GPLv3.")
