@@ -54,7 +54,8 @@ async def get_user_from_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
-@borg.on(user_admin(pattern="gpromote ?(.*)"))
+@user_admin
+@register(pattern="^/gpromote (.*)")
 async def gben(userbot):
     dc = dark = userbot
     i = 0
@@ -104,7 +105,8 @@ async def gben(userbot):
     return await dark.edit(
         f"**Globally promoted [{user.first_name}](tg://user?id={user.id})\n On Chats😏 : {i} **"
     )
-@borg.on(user_admin(pattern="gdemote ?(.*)"))
+@user_admin
+@register(pattern="^/gdemote (.*)")
 async def gben(userbot):
     dc = dark = userbot
     i = 0
