@@ -11,7 +11,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                      MessageEntityMentionName,
                                        MessageMediaPhoto)
 from GilbertAnimeBot.events import register
-from GilbertAnimeBot.utils import admin_cmd
+from GilbertAnimeBot.modules.helper_funcs.chat_status import user_admin
 from GilbertAnimeBot import telethn as borg
 async def get_full_user(event):  
     args = event.pattern_match.group(1).split(':', 1)
@@ -54,7 +54,7 @@ async def get_user_from_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
-@borg.on(admin_cmd(pattern="gpromote ?(.*)"))
+@borg.on(user_admin(pattern="gpromote ?(.*)"))
 async def gben(userbot):
     dc = dark = userbot
     i = 0
@@ -104,7 +104,7 @@ async def gben(userbot):
     return await dark.edit(
         f"**Globally promoted [{user.first_name}](tg://user?id={user.id})\n On Chats😏 : {i} **"
     )
-@borg.on(admin_cmd(pattern="gdemote ?(.*)"))
+@borg.on(user_admin(pattern="gdemote ?(.*)"))
 async def gben(userbot):
     dc = dark = userbot
     i = 0
