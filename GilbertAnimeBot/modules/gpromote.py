@@ -12,7 +12,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                        MessageMediaPhoto)
 from GilbertAnimeBot.utils import register, errors_handler
 from GilbertAnimeBot.utils import admin_cmd
-from GilbertAnimeBot import bot as borg
+from GilbertAnimeBot import telethn as borg
 async def get_full_user(event):  
     args = event.pattern_match.group(1).split(':', 1)
     extra = None
