@@ -10,7 +10,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                    ChatBannedRights,
                                      MessageEntityMentionName,
                                        MessageMediaPhoto)
-from GilbertAnimeBot.utils import register, errors_handler
+from GilbertAnimeBot.events import register
 from GilbertAnimeBot.utils import admin_cmd
 from GilbertAnimeBot import telethn as borg
 async def get_full_user(event):  
